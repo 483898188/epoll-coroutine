@@ -7,7 +7,7 @@ Exemple echo server with in the main.cc
 
 
 # 主要目的
-学习协程 封装了一个echo server服务 
+封装了 Linux 的非阻塞 I/O 系统调用和 epoll，当 I/O 未就绪时，挂起的是“协程”（释放线程所有权），然后把文件描述符（fd）丢给 epoll 去监听；当 epoll 监听到事件后，再由事件循环去恢复“协程”。
 
 # 库文件
 需要使用http-parser库解析请求  
